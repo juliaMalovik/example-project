@@ -1,0 +1,50 @@
+.card{
+  position:relative;
+  padding: 1rem 1rem 0.5rem 1rem;
+  margin-bottom:1rem;
+  &:last-child{
+    margin-bottom:0;
+  }
+  p{
+    margin-bottom:0.5rem;
+  }
+}
+.movie-list{
+  position:relative;
+  margin-bottom:1rem;
+}
+
+.movie-header{
+  h5{
+    max-width:60%;
+  }
+  .rate{
+    display:inline-block;
+    width:34px;
+    height:30px;
+    margin-left:10px;
+    color: #222222;
+    background: gold;
+    border-radius:4px;
+    text-align: center;
+    line-height:31px;
+  }
+}
+.card{
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.image-wrapper{
+  flex: 0 0 10%;
+  max-width: 10%;
+  padding-right:1rem;
+  img{
+    display: block;
+    width:100%;
+  }
+}
+.text-with-image{
+  flex: 0 0 90%;
+  max-width: 90%;
+}
+

@@ -1,0 +1,38 @@
+.movies-wrapper{
+  position:relative;
+}
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index:1000;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.8s, visibility 0.8s;
+  transition: opacity 0.8s, visibility 0.8s;
+
+  i {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 60px;
+    color: #768194;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+}
+

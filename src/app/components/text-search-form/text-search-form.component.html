@@ -1,0 +1,12 @@
+<form class="form"
+      [formGroup]="searchForm"
+      (ngSubmit)="onSubmit()">
+  <div class="form-group mb-2">
+    <label>Text search</label>
+    <div class="input-group">
+      <input [ngClass]="{'is-invalid': searchForm.controls['query'].invalid}" type="text" class="form-control" placeholder="Enter movie name" formControlName="query">
+      <button class="btn btn-primary" type="submit" [disabled]="!searchForm.valid">Search</button>
+    </div>
+    <div class="text-muted fs-6">Not only gaps</div>
+  </div>
+</form>

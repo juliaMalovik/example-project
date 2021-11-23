@@ -1,0 +1,20 @@
+<h4>My search history</h4>
+<div *ngFor="let history of historyList">
+  <small>{{history.date}}</small>
+  <a class="cursor-pointer text-primary" (click)="restoreHistory(history)">
+    <div class="mb-1">
+      <div *ngIf="history.query">Text: {{history.query}}</div>
+      <div *ngIf="history.genre_names && history.genre_names.length">Genre:
+        <span *ngFor="let genre of history.genre_names; let $last = last">
+            {{genre}}<span *ngIf="!$last">, </span>
+            </span>
+      </div>
+      <div *ngIf="history.primary_release_year">Year: {{history.primary_release_year}}</div>
+      <div *ngIf="history.vote_average && history.vote_average.length">Rating:
+        {{history.vote_average[0]}} - {{history.vote_average[1]}}
+      </div>
+    </div>
+  </a>
+  <hr>
+</div>
+

@@ -1,0 +1,36 @@
+
+::ng-deep {
+  .range-wrapper {
+    .ng5-slider {
+      margin-top:30px;
+      margin-bottom: 0;
+      .ng5-slider-pointer {
+        width: 18px;
+        height: 18px;
+        top: -7px;
+        background: gold;
+        outline: none !important;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      .ng5-slider-bar {
+        background: #dddddd;
+      }
+
+      .ng5-slider-selection-bar {
+        .ng5-slider-bar {
+          background: #333333;
+        }
+      }
+
+      .ng5-slider-bubble {
+        bottom: 12px;
+        font-size: 14px;
+        line-height: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-12 col-md-9">
+    <h2>My Movies</h2>
+    <div class="row mb-2">
+      <div class="col-md-6 col-lg-4">
+        <app-text-search-form (searchFormChanged)="searchChanged($event)"></app-text-search-form>
+      </div>
+      <div class="col-md-12 col-lg-8">
+        <app-movie-discover-form (discoverFormChanged)="discoverFormChanged($event)"
+                                 [genreList]="genreList"></app-movie-discover-form>
+      </div>
+    </div>
+    <div *ngIf="movieList" class="movies-wrapper">
+      <app-movie-list [movies]="movieList.results | paginate : {
+                itemsPerPage: 20,
+                currentPage: currentPage,
+                totalItems: movieList.total_results
+              }"></app-movie-list>
+      <div class="d-flex justify-content-center">
+        <pagination-controls [maxSize]="10"
+                             (pageChange)="pageChanged($event)">
+        </pagination-controls>
+      </div>
+      <div class="loader" [ngClass]="{'active': loading}"><i class="fa fa-spinner fa-spin fa-3x fa-fw"
+                                                             aria-hidden="true"></i></div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-3">
+    <div class="history-wrapper">
+      <app-history-list [historyList]="historyList"></app-history-list>
+    </div>
+  </div>
+</div>
+
+
+
+

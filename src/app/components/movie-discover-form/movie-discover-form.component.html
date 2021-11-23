@@ -1,0 +1,36 @@
+<form class="form"
+      [formGroup]="discoverForm"
+      (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group mb-2">
+        <label>Genre</label>
+        <ng-select
+          [items]="genreList"
+          bindLabel="name"
+          bindValue="id"
+          [multiple]="true"
+          placeholder="Select genres"
+          formControlName="with_genres">
+        </ng-select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group mb-2">
+        <label>Year</label>
+        <ng-select
+          [items]="yearList"
+          placeholder="Select year"
+          formControlName="primary_release_year">
+        </ng-select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group range-wrapper mb-2">
+        <label class="m-0">Rating</label>
+        <ngx-slider [options]="voteOptions" formControlName="vote_average"></ngx-slider>
+      </div>
+    </div>
+  </div>
+
+</form>

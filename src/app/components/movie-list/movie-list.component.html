@@ -1,0 +1,24 @@
+<div class="movie-list" *ngIf="movies">
+    <div class="card" *ngFor="let movie of movies">
+        <div class="image-wrapper" *ngIf="movie.poster_path">
+            <img src="{{imagePath}}{{movie.poster_path}}">
+        </div>
+        <div class="text-wrapper" [ngClass]="{'text-with-image': movie.poster_path}">
+            <div class="clearfix movie-header">
+                <h5 class="card-title float-left">{{movie.title}}</h5>
+                <div class="text-muted float-right">
+                    {{movie.release_date}}
+                    <span class="rate">
+                    {{movie.vote_average}}
+                </span>
+                </div>
+            </div>
+            <p class="text-primary">
+            <span *ngFor="let genre of movie.genre_names; let $last = last">
+            {{genre}}<span *ngIf="!$last">, </span>
+            </span>
+            </p>
+            <p>{{movie.overview}}</p>
+        </div>
+    </div>
+</div>
